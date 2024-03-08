@@ -20,3 +20,6 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT);
+
+
+app.use(express.urlencoded({ extended: true }))
