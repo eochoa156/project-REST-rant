@@ -8,9 +8,9 @@ function error404 () {
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
               <div>
-                <img src="/images/sleepyCat.jpg" alt="SleepyCat"/>
+                <img src="/images/sad-cat.jpg" alt="Sad Cat"/>
                 <div>
-                  Photo by <a href="https://unsplash.com/@plhnk">Paul Hanaoka</a> on <a href="https://unsplash.com/photos/sleeping-leopard-kitten-LcAZcVWsCIo">Unsplash</a>
+                  Photo by <a href="https://unsplash.com/@hhh13">傅甬 华</a> on <a href="https://unsplash.com/photos/brown-and-white-cat-in-shallow-focus-shot-tEMU4lzAL0w">Unsplash</a>
                 </div>
               </div>
           </main>

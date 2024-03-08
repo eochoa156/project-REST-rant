@@ -5,6 +5,7 @@ const app = express()
 
 //Express Settings
 app.set('view engine', 'jsx')
+app.use(express.urlencoded({extended: true}))
 app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'));
 app.use(express.static('public'))
