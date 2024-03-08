@@ -29,5 +29,4 @@ function Index (data) {
   )
 }
 
-
   module.exports = Index
