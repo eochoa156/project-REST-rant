@@ -1,11 +1,11 @@
 const React = require('react')
 const Def = require('../default')
 
-function Show () {
+function Show (data) {
     return (
         <Def>
           <main>
-            <h1>Show Page</h1>
+            <h1>{ data.place.name }</h1>
           </main>
         </Def>
     )
