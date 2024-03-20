@@ -49,7 +49,7 @@ function Edit_form (data) {
                         defaultValue= {data.place.cuisines} 
                         required/>
                 </div>
-                <input className="btn btn-primary" type="submit" defaultValue="Add Place"/>
+                <input className="btn btn-primary" type="submit" defaultValue="Edit"/>
             </form>
         </main>
     </Def>

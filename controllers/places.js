@@ -21,8 +21,10 @@ router.get('/new', (req, res) => {
 //GET retreive by index
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
+  .populate('comments')
   .then(place => {
-      res.render('places/show', { place })
+    console.log(place.comments)  
+    res.render('places/show', { place })
   })
   .catch(err => {
       console.log('err', err)
@@ -31,7 +33,11 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.send ('GET edit form stub')
+  let id = req.params.id
+  db.Place.findById(id)
+  .then(place => {
+    res.render('places/edit', { place })
+  })
 })
 
 //CREATE
@@ -44,7 +50,7 @@ router.post('/', (req, res) => {
       if (err && err.name == 'ValidationError') {
         for (var field in err.errors) {
           message += `${field} was ${err.errors[field].value}.`
-          messgae += `${err.errors[field].message}`
+          messgae += `rs${err.errors[field].message}`
         }
         console.log('Validation error message', message)
         res.render('places/new', { message })
@@ -61,16 +67,25 @@ router.post('/:id/rant', (req, res) => {
 
 //PUT update places
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+  let id = req.params.id
+  db.Place.findByIdAndUpdate(id, req.body)
+  .then(place => {
+    res.redirect(`/places/${id}`)
+  })
 })
 
 
 //DELETE places
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  let id = req.params.id
+  db.Place.findByIdAndDelete(id)
+  .then(place => {
+    res.redirect('/places')
+  })
 })
 
 router.delete('/:id/rant:rantId', (req, res) => {
+  
   res.send('GET /places/:id/rant.:rantId stub')
 })
 
