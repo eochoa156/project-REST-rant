@@ -10,6 +10,16 @@ function New_form(data) {
                 </h4>
             )
         }
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+    }, 0)
+    let averageRating = sumRatings / data.place.comments.length
+        rating = (
+            <h3>
+            {Math.round(averageRating)} stars
+            </h3>
+        )
+        
     return(
         <Def>
             <main>
@@ -36,15 +46,15 @@ function New_form(data) {
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className="form-control" id="cuisines" name="cuisines" required/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4">
                         <label htmlFor="founded">Founded Year</label>
-                        <input className="form-control" 
+                        <input 
                         type= "number"
-                        id="founded" 
+                        className="form-control" 
+                        id = "founded" 
                         name="founded"
-                        value={new Date().getFullYear} />
+                        value= {new Date().getFullYear} />
                     </div>
-
                     <input className="btn btn-primary" type="submit" value="Add Place"/>
                 </form>
             </main>

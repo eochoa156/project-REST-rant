@@ -49,6 +49,14 @@ function Edit_form (data) {
                         defaultValue= {data.place.cuisines} 
                         required/>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="founded">Founded</label>
+                    <input 
+                        className="form-control" 
+                        id="founded" 
+                        name="founded" 
+                        defaultValue= {data.place.founded} />
+                </div>
                 <input className="btn btn-primary" type="submit" defaultValue="Edit"/>
             </form>
         </main>
